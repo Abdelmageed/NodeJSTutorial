@@ -1,11 +1,25 @@
 {
-  "name": "nodejs-tutorial",
-  "version": "1.0.0",
+  "name": "@abdelmageed/nodejs-tutorial",
+  "version": "1.0.1",
   "description": "tutorial project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
   },
   "author": "Abdelmageed Sayed",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdelmageed/NodeJSTutorial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdelmageed/NodeJSTutorial/issues"
+  },
+  "homepage": "https://github.com/Abdelmageed/NodeJSTutorial#readme",
+  "dependencies": {
+    "@linclark/pkg": "^1.0.2"
+  }
 }
